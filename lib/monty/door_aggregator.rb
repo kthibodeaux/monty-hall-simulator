@@ -19,10 +19,6 @@ module Monty
       doors.select(&:loser?)
     end
 
-    def winning_door
-      doors.detect(&:winner?)
-    end
-
     private
 
     def winning_door_number
