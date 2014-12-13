@@ -1,9 +1,12 @@
 ## monty
 A basic simulator for the Monty Hall problem
 
-## usage
-`ruby bin/run.rb [count] [--no-progress]`
-
-count will default to 1000 if no value is set
-
-`--no-progress` will prevent the application from printing a '.' every 1000 simulations
+```
+Usage: ruby bin/run.rb [options]
+        --no-progress                Hide printing . while processing
+                                     DEFAULT: false
+    -d, --doors [NUMBER OF DOORS]    Number of doors to use
+                                     DEFAULT: 3
+    -t, --times [TIMES TO RUN]       Number of times to run each simulation set
+                                     DEFAULT: 1000
+```

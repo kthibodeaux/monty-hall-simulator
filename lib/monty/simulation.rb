@@ -1,7 +1,7 @@
 module Monty
   class Simulation
 
-    def initialize(strategy = :switch)
+    def initialize(strategy)
       @strategy = strategy
     end
 

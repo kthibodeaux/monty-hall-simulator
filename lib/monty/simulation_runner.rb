@@ -2,14 +2,14 @@ module Monty
   class SimulationRunner
     attr_reader :strategy, :played, :won
 
-    def initialize(strategy = :switch)
+    def initialize(strategy)
       @strategy = strategy
       @played = 0
       @won = 0
     end
 
-    def run(times_to_run)
-      times_to_run.times do
+    def run
+      Monty.times_to_run.times do
         simulation = new_simulation
         simulation.run
         increment_played
@@ -20,7 +20,7 @@ module Monty
     end
 
     def print_results
-      puts "#{ strategy } won: #{ won } / #{ played }"
+      puts "#{ strategy } won: #{ won } / #{ played } (Used #{ Monty.number_of_doors } doors)"
     end
 
     private
@@ -38,7 +38,7 @@ module Monty
     end
 
     def print_a_dot
-      print '.' if ! ARGV.include?('--no-progress') && played % 1000 == 0
+      print '.' if Monty.verbose? && played % 1000 == 0
     end
 
   end

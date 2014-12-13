@@ -1,10 +1,6 @@
 module Monty
   class DoorAggregator
 
-    def initialize(number_of_doors = 3)
-      @number_of_doors = number_of_doors
-    end
-
     def doors
       @doors ||= door_numbers.map do |door_number|
         if winning_door_number == door_number
@@ -16,7 +12,7 @@ module Monty
     end
 
     def door_numbers
-      1.upto(@number_of_doors).map { |n| n }
+      1.upto(Monty.number_of_doors).map { |n| n }
     end
 
     def losing_doors
