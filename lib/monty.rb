@@ -1,4 +1,3 @@
-require 'pp'
 require 'monty/door'
 require 'monty/door_factory'
 require 'monty/door_aggregator'
